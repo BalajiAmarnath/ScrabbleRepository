@@ -13,8 +13,6 @@ pair<vector<string>,int> maxValueString;
 
 int scores[26] = {1,3,3,2,1, 4,2,4,1,8, 5,1,3,1,1, 3,10,1,1,1, 1,4,4,8,4,10};
 
-ifstream file;
-
 string hash( string str );
 int find_score(string s);
 void combinations(char arr[], char data[], int start, int end, int index, int r);
@@ -59,6 +57,7 @@ int main() {
 
 void processDictionary( string filePath )
 {
+	ifstream file;
     file.open( filePath.c_str() );
     string word;
 
