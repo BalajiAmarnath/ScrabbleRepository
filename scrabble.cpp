@@ -11,6 +11,8 @@ using namespace std;
 map <string,pair<vector<string>,int> > hashMap;
 pair<vector<string>,int> maxValueString;
 
+int scores[26] = {1,3,3,2,1, 4,2,4,1,8, 5,1,3,1,1, 3,10,1,1,1, 1,4,4,8,4,10};
+
 ifstream file;
 
 string hash( string str );
@@ -89,13 +91,8 @@ string hash( string str ) {
 
 int find_score(string s)
 {
-    int scores[26];
-    for(int i=0;i<26;i++)
-    {
-        scores[i] = i+1;
-    }
+    
     int score=0;
-
     for (int i=0;i<s.length();i++)
     {
         score=score+scores[s[i]-'a'];
